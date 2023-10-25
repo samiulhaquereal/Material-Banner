@@ -31,16 +31,23 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
-    return Center(
-      child: ElevatedButton(onPressed: () {
-        ScaffoldMessenger.of(context).showMaterialBanner(MaterialBanner(content: Text('Give a like'), actions: [
-          TextButton(onPressed: (){
-            ScaffoldMessenger.of(context).hideCurrentMaterialBanner();
-          }, child: Text('Close'))
-        ]));
-      },
-        child: Text('Click'),
+    return Scaffold(
+      body: Center(
+        child: ElevatedButton(onPressed: () {
+          ScaffoldMessenger.of(context).showMaterialBanner(MaterialBanner(
+              padding: EdgeInsets.all(10),
+              leading: Icon(Icons.local_airport),
+              elevation: 5,
+              backgroundColor: Colors.grey,
+              content: Text('Give a like'), actions: [
+            TextButton(onPressed: (){
+              ScaffoldMessenger.of(context).hideCurrentMaterialBanner();
+            }, child: Text('Close'))
+          ]));
+        },
+          child: Text('Click'),
 
+        ),
       ),
     );
   }
